@@ -1,4 +1,73 @@
 
 tcp_port_range_scanner:
-  host: '192.168.1.18'
+  enable: False
+  hosts:
+    - 192.168.1.18
   port_range: [22, 23, 80, 443, 3389]
+
+ack_scanner:
+  enable: False
+  hosts:
+    - 192.168.1.1
+    - 192.168.1.10
+    - 192.168.1.11
+    - 192.168.1.12
+    - 192.168.1.17
+    - 192.168.1.18
+    - 192.168.1.22
+  dports: [80, 255]
+
+xmas_scanner:
+  enable: False
+  hosts:
+    - 192.168.1.1
+    - 192.168.1.10
+    - 192.168.1.11
+    - 192.168.1.12
+    - 192.168.1.17
+    - 192.168.1.18
+    - 192.168.1.22
+  dports: [255]
+
+ip_scanner:
+  enable: False
+  hosts:
+    - 192.168.1.1
+    - 192.168.1.10
+    - 192.168.1.11
+    - 192.168.1.12
+    - 192.168.1.17
+    - 192.168.1.18
+    - 192.168.1.22
+  message: "SCAPY"
+
+arp_scanner:
+  enable: False
+  network: '192.168.1.0/24'
+
+icmp_ping_scanner:
+  enable: True
+  network: '192.168.1.0/24'
+  nb_host_to_test: 10
+
+udp_ping:
+  hosts:
+    - 192.168.*.1
+    - 192.168.1.10-13
+    - 192.168.1.17-22
+
+dns_request:
+  dns_server: '8.8.8.8'
+  dport: 53
+  hosts:
+    - www.google.fr
+    - www.thepacketgeek.com
+    - www.ovh.fr
+
+http_request:
+  dport: 80
+  hosts:
+    - www.google.fr
+    - www.thepacketgeek.com
+    - www.ovh.fr
+
