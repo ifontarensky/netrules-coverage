@@ -1,17 +1,19 @@
 
 from __future__ import print_function
-from scapy.all import sr1, wrpcap
+from scapy.all import sr1, wrpcap,PcapWriter
 
 class TrafficAPI:
 
     def __init__(self):
         self.traffic = []
 
-    def send_receive(self, packet, *args, **kargs):
+    def send_receive(self, packet, funcsr=sr1, *args, **kargs):
         self.traffic += packet
-        resp = sr1(packet, *args, **kargs)
-        self.traffic += resp
+        resp = funcsr(packet, *args, **kargs)
+        if resp is not None:
+            self.traffic += resp
         return resp
 
     def generate_pcap(self, file_path_pcap):
-        wrpcap(file_path_pcap, self.traffic, append=True)
+        print(self.traffic)
+        wrpcap("../output_pcap/"+file_path_pcap, self.traffic, append=True)

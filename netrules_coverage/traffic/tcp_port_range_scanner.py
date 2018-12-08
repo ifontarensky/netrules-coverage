@@ -10,9 +10,13 @@ class tcp_port_range_scanner(TrafficAPI):
     def __init__(self):
         TrafficAPI.__init__(self)
 
-    def run(self, host, port_range):
+    def run(self, hosts, port_range):
 
         # Send SYN with random Src Port for each Dst port
+        for host in hosts:
+            self._tcp_port_range_scanner(host, port_range)
+
+    def _tcp_port_range_scanner(self, host, port_range):
         for dstPort in port_range:
             srcPort = random.randint(1025, 65534)
             packet = IP(dst=host)/TCP(sport=srcPort, dport=dstPort, flags="S")
