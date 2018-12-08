@@ -13,6 +13,7 @@ Welcome to netrules_coverage's documentation!
    introduction
    installation
    usage
+   testnotebook
 
 Indices and tables
 ==================
