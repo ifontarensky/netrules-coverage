@@ -46,17 +46,19 @@ arp_scanner:
   network: '192.168.1.0/24'
 
 icmp_ping_scanner:
+  enable: False
   enable: True
   network: '192.168.1.0/24'
   nb_host_to_test: 10
 
 udp_ping:
+  enable: False
   hosts:
     - 192.168.*.1
     - 192.168.1.10-13
-    - 192.168.1.17-22
 
 dns_request:
+  enable: False
   dns_server: '8.8.8.8'
   dport: 53
   hosts:
@@ -65,9 +67,15 @@ dns_request:
     - www.ovh.fr
 
 http_request:
+  enable: False
   dport: 80
   hosts:
     - www.google.fr
     - www.thepacketgeek.com
     - www.ovh.fr
 
+ping_of_the_death:
+  enable: False
+  hosts:
+    - 192.168.1.10
+    - 192.168.1.11
