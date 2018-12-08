@@ -1,10 +1,10 @@
 # Variable
 PYTHON=$(shell which python3)
-PIP=$(which pip3)
+PIP=$(shell which pip3)
 
 # Set important Paths
 PROJECT := netrules_coverage
-DOCPATH := docs
+DOCPATH := docs/$(PROJECT)
 
 # Variable used for documentation
 SPHINXOPTS   =
@@ -38,10 +38,10 @@ clean:
 	-rm -rf $(PROJECT).egg-info
 
 doc: build
-	-rm -rf $(DOCPATH)/build/*
-	mkdir -p $(DOCPATH)/build
+	-rm -rf $(DOCPATH)/_build/*
+	mkdir -p $(DOCPATH)/_build
 	-$(PIP) uninstall $(PROJECT) -y
-	$(PIP) install dist/$(PROJECT)-*-py2-none-any.whl --upgrade
+	$(PIP) install dist/$(PROJECT)-*-none-any.whl --upgrade
 	make -C  $(DOCPATH) html;
 
 test:
