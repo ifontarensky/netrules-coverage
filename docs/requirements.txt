@@ -1,1 +1,3 @@
 scapy
+netaddr
+pyyaml
