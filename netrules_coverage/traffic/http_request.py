@@ -18,4 +18,3 @@ class http_request(TrafficAPI):
             answer = self.send_receive(packet, timeout=2, verbose=0)
             print(answer.summary())
 
-    #/ "GET /index.html HTTP/1.0 \n\n"
