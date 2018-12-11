@@ -1,14 +1,13 @@
 
 from __future__ import print_function
-from traffic.TrafficAPI import TrafficAPI
+from plugins.PluginAPI import PluginAPI
 
 from scapy.all import UDP, IP, DNS, DNSQR
-import random
 
-class dns_request(TrafficAPI):
+class dns_request(PluginAPI):
 
     def __init__(self):
-        TrafficAPI.__init__(self)
+        PluginAPI.__init__(self)
 
     def run(self, dns_server, hosts, dport=53):
 

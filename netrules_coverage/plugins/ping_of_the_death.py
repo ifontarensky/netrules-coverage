@@ -1,15 +1,15 @@
 
 from __future__ import print_function
-from traffic.TrafficAPI import TrafficAPI
+from plugins.PluginAPI import PluginAPI
 
 from scapy.all import IP, ICMP, fragment
 import netaddr
 
 
-class ping_of_the_death(TrafficAPI):
+class ping_of_the_death(PluginAPI):
 
     def __init__(self):
-        TrafficAPI.__init__(self)
+        PluginAPI.__init__(self)
 
     def run(self, hosts):
 

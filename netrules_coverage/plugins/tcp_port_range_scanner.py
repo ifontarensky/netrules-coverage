@@ -1,14 +1,14 @@
 
 from __future__ import print_function
-from traffic.TrafficAPI import TrafficAPI
+from plugins.PluginAPI import PluginAPI
 
 from scapy.all import TCP, IP, ICMP
 import random
 
-class tcp_port_range_scanner(TrafficAPI):
+class tcp_port_range_scanner(PluginAPI):
 
     def __init__(self):
-        TrafficAPI.__init__(self)
+        PluginAPI.__init__(self)
 
     def run(self, hosts, port_range):
 

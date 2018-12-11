@@ -1,14 +1,14 @@
 
 from __future__ import print_function
-from traffic.TrafficAPI import TrafficAPI
+from plugins.PluginAPI import PluginAPI
 
 from scapy.all import TCP, IP
 
 
-class xmas_scanner(TrafficAPI):
+class xmas_scanner(PluginAPI):
 
     def __init__(self):
-        TrafficAPI.__init__(self)
+        PluginAPI.__init__(self)
 
     def run(self, hosts, dports=[255]):
 

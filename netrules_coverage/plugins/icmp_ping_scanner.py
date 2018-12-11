@@ -1,15 +1,15 @@
 
 from __future__ import print_function
-from traffic.TrafficAPI import TrafficAPI
+from plugins.PluginAPI import PluginAPI
 
 from scapy.all import IP, ICMP
 import netaddr
 
 
-class icmp_ping_scanner(TrafficAPI):
+class icmp_ping_scanner(PluginAPI):
 
     def __init__(self):
-        TrafficAPI.__init__(self)
+        PluginAPI.__init__(self)
 
     def run(self, network, nb_host_to_test=255, delay=0):
 

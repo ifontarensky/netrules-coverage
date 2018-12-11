@@ -1,14 +1,14 @@
 
 from __future__ import print_function
-from traffic.TrafficAPI import TrafficAPI
+from plugins.PluginAPI import PluginAPI
 
 from scapy.all import UDP, IP, ISAKMP, RandString, ISAKMP_payload_SA, ISAKMP_payload_Proposal
 
 
-class ike_scanner(TrafficAPI):
+class ike_scanner(PluginAPI):
 
     def __init__(self):
-        TrafficAPI.__init__(self)
+        PluginAPI.__init__(self)
 
     def run(self, hosts):
 
