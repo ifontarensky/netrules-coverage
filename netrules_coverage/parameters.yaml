@@ -47,14 +47,13 @@ arp_scanner:
 
 icmp_ping_scanner:
   enable: False
-  enable: True
   network: '192.168.1.0/24'
   nb_host_to_test: 10
 
 udp_ping:
   enable: False
   hosts:
-    - 192.168.*.1
+#    - 192.168.*.1
     - 192.168.1.10-13
 
 dns_request:
@@ -66,16 +65,36 @@ dns_request:
     - www.thepacketgeek.com
     - www.ovh.fr
 
-http_request:
-  enable: False
-  dport: 80
-  hosts:
-    - www.google.fr
-    - www.thepacketgeek.com
-    - www.ovh.fr
-
 ping_of_the_death:
   enable: False
   hosts:
     - 192.168.1.10
     - 192.168.1.11
+
+ike_scanner:
+  enable: False
+  hosts:
+    - 192.168.1.10
+    - 192.168.1.11
+
+dns_fuzzing:
+  enable: False
+  hosts:
+    - 192.168.1.10
+    - 192.168.1.11
+
+cve_84393:
+  enable: False
+  hosts:
+    - 192.168.1.10
+    - 192.168.1.11
+
+cve_2014_0569:
+  enable: False
+  hosts:
+    - 192.168.1.10
+    - 192.168.1.11
+
+traffic_cve_2012_0507:
+  hosts:
+    - 37.200.69.143
