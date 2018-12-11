@@ -2,17 +2,17 @@
 import inspect
 import importlib
 
-from traffic.TrafficAPI import TrafficAPI
+from plugins.PluginAPI import PluginAPI
 
 
 def find_and_load_plugin(plugin_type):
 
     try:
-        module = importlib.import_module('traffic.{0}'.format( plugin_type))
+        module = importlib.import_module('plugins.{0}'.format( plugin_type))
         for x in dir(module):
             obj = getattr(module, x)
 
-            if inspect.isclass(obj) and issubclass(obj, TrafficAPI) and obj is not TrafficAPI:
+            if inspect.isclass(obj) and issubclass(obj, PluginAPI) and obj is not PluginAPI:
                 return obj
 
     except ImportError as error:
