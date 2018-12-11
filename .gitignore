@@ -108,3 +108,5 @@ venv.bak/
 
 #Suricata
 suricata-4.1.0/*
+input_pcap/*
+output_pcap/*
